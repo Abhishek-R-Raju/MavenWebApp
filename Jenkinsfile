@@ -10,7 +10,8 @@ stage('Build') { steps {
 sh 'mvn clean package' // Run Maven build }
 }
 stage('Archive') { steps {
-archieveArtifacts artifacts 'target/MymavenWebApp01.war', fingerprint:true }
+archiveArtifacts artifacts: 'target/MymavenWebApp01.war', fingerprint: true
+}
 }
 stage('Deploy') { steps {
 sh 'mvn clean package' }
